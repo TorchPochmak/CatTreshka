@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b50b89173f5697e4cb7b38ba8fe47c25
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: c29b64e2fe33c504095fe90b2113c5bf
+  - enabled: 1
+    path: Assets/Scenes/mini-game scenes/FindTheCat.unity
+    guid: b9e293828ac211a43845f9c8e031686b
+  - enabled: 1
+    path: Assets/Scenes/mini-game scenes/MathGame.unity
+    guid: fa7a8664b831ced458655cfca85be2f6
+  - enabled: 1
+    path: Assets/Scenes/mini-game scenes/Puzzle.unity
+    guid: 16d939888c338a14f98f16590c2f2258
+  - enabled: 1
+    path: Assets/Scenes/mini-game scenes/PuzzleBeautiful.unity
+    guid: 3e65d12680f7cf44dab30ac9165769aa
+  - enabled: 1
+    path: Assets/Scenes/DemoMenu.unity
+    guid: 5e2b0bf9a47240e4496facb061e731ed
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f471b793116e9af4d85d6393da3cc98e, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 6aa829421295b654691e4c13299f9897, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0a2df73fce09c3a4c83dcfce6b70110a, type: 2}

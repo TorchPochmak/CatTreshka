@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c048891b9ff9040b2300b4dac68a06, type: 3}
+  m_Name: TestItemLamp
+  m_EditorClassIdentifier: 
+  title_: Lamp
+  description_: Description
+  properties_: Properties
+  isStackable_: 1
+  currCount_: 0
+  maxCount_: 100
+  icon_: {fileID: 862738280, guid: a1987fc213c324e48bfd6f7416242fd0, type: 3}

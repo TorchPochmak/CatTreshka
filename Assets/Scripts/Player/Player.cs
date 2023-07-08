@@ -60,18 +60,18 @@ namespace CatTreshka
         private bool isPlayed = false;
         private void AudioMove()
         {
-            if(isGrounded && physicShape.velocity.x != 0)
+            if (isGrounded && physicShape.velocity.x != 0)
             {
                 if (!MoveAudio.isPlaying) MoveAudio.Play();
             }
             else
             {
-                if(MoveAudio.isPlaying) MoveAudio.Stop();
+                if (MoveAudio.isPlaying) MoveAudio.Stop();
             }
         }
 
         /// <summary>
-        /// Производит все необходимые анимации
+        /// ?????????? ??? ??????????? ????????
         /// </summary>
         /// <param name="ways"></param>
         private void AnimationMovement(float[] ways)

@@ -27,10 +27,14 @@ public class PuzzleRotate : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        transform.Rotate(0, 0, 90);
-        currentDegrees = ((currentDegrees + 90) % 360);
-        isPlaced = CheckTile();
-        puzzleManager.CheckPuzzle();
+        bool check = puzzleManager.isSolved;
+        if (!check)
+        {
+            transform.Rotate(0, 0, 90);
+            currentDegrees = ((currentDegrees + 90) % 360);
+            isPlaced = CheckTile();
+            puzzleManager.CheckPuzzle();
+        }
     }
     private bool CheckTile()
     {

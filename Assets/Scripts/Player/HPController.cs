@@ -1,3 +1,4 @@
+using CatTreshka;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,9 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class HPController : MonoBehaviour
 {
+    [SerializeField] private Respawn respawn;
+
+
     public bool isDead = false;
     [SerializeField] private SpriteRenderer sprite;
 
@@ -99,8 +103,25 @@ public class HPController : MonoBehaviour
         for (int i = 255; i >= 0; i -= Atick)
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, (float)i / 255);
-            yield return new WaitForSeconds(tick);
+            yield return new WaitForSecondsRealtime(tick);
         }
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        yield return StartCoroutine(RespawnGo());
+    }
+    public IEnumerator RespawnGo()
+    {
+        yield return StartCoroutine(respawn.RespawnFirst());
+        Debug.Log("ppppppppopopoppepepeop");
+        SetHP(3);
+        //TODO lose artek
+        isDead = false;
+        float tick = dieTime / ticksToDie;
+        int Atick = 255 / (int)ticksToDie;
+        for (int i = 0; i <= 255; i += Atick)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, (float)i / 255);
+            yield return new WaitForSecondsRealtime(tick);
+        }
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
     }
 }

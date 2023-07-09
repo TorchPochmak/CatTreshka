@@ -7,5 +7,6 @@ namespace CatTreshka
     public static class Singletons
     {
         public static GameObject CatPlayer;
+        public static FadeAndBackScreen BlackScreen;
     }
 }

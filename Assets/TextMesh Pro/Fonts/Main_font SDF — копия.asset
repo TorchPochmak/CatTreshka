@@ -100,7 +100,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 1, g: 0, b: 0, a: 0}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0.92452836, g: 0.85574174, b: 0.38812745, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Main_font SDF
+  m_Name: "Main_font SDF \u2014 \u043A\u043E\u043F\u0438\u044F"
   m_EditorClassIdentifier: 
-  hashCode: -179113354
+  hashCode: 945430382
   material: {fileID: -4717739407366085966}
-  materialHashCode: 1763691030
+  materialHashCode: -1253052402
   m_Version: 1.1.0
   m_SourceFontFileGUID: 6b912119cf025a545a9e1bc85b5efa37
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 6b912119cf025a545a9e1bc85b5efa37, type: 3}

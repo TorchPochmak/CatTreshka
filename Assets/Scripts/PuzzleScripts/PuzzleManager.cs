@@ -11,7 +11,6 @@ public class PuzzleManager : MonoBehaviour
     public int allTiles = 6;
     public int solvedTiles = 6;
     public GameObject lamp;
-    public bool isSolved = false;
 
     private void Start()
     {
@@ -28,16 +27,7 @@ public class PuzzleManager : MonoBehaviour
         return vector;
     }
 
-    public bool checkSolved(int have, int need)
-    {
-        if (need == have)
-        {
-            isSolved = true;
-            return true;
-        }
-        else
-            return false;
-    }
+
 
     public void CheckPuzzle()
     {
@@ -50,7 +40,7 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        if (checkSolved(solvedTiles, allTiles))
+        if (solvedTiles == allTiles)
         {
             // send action to other scripts
             lamp.transform.position = SetZ(lamp.transform.position, -2);

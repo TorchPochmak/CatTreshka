@@ -130,7 +130,11 @@ GameObject:
   - component: {fileID: 3064368625397385253}
   - component: {fileID: 5534330726000369573}
   - component: {fileID: 4380575614988312844}
+<<<<<<< Updated upstream
   - component: {fileID: 471852114206188396}
+=======
+  - component: {fileID: 4919610515916857213}
+>>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -233,9 +237,13 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 0.093379974, y: 0.0311265}
+=======
+  m_Offset: {x: -0.059257507, y: 1.5118318}
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -246,16 +254,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 40.773247, y: 3.1875734}
   m_EdgeRadius: 0
 --- !u!50 &471852114206188396
 Rigidbody2D:
   serializedVersion: 4
+=======
+  m_Size: {x: 18.926346, y: 0.22616291}
+  m_EdgeRadius: 0
+--- !u!251 &4919610515916857213
+PlatformEffector2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2873093021583583768}
+<<<<<<< Updated upstream
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -269,6 +285,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+=======
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+>>>>>>> Stashed changes
 --- !u!1 &5196307456096956895
 GameObject:
   m_ObjectHideFlags: 0

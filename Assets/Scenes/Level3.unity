@@ -3637,7 +3637,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: MainMenu
-  GameMenu: GameScene
+  LevelLearn: LevelLearn
+  Level1: Level1
+  Level2: Level2
+  Level3: Level3
+  gameEnded: GameEnd
 --- !u!4 &604264080
 Transform:
   m_ObjectHideFlags: 0
@@ -4886,7 +4890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957764280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -147.93748, y: 3.1119483, z: -20}
+  m_LocalPosition: {x: -147.94006, y: 3.1119483, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9317,7 +9321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495645431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -147.93748, y: 3.1119483, z: -20}
+  m_LocalPosition: {x: -147.94006, y: 3.1119483, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9651,7 +9655,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 774763178}
     _prefab: Assets/Prefabs/Lift1.prefab
   - _gameObject: {fileID: 877087341}
-    _prefab: Assets/Prefabs/LiftMini.prefab
+    _prefab: 
   - _gameObject: {fileID: 4848259826255758663}
     _prefab: Assets/Prefabs/Artek.prefab
 --- !u!4 &1570046518

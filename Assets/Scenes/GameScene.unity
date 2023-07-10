@@ -219,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37353293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -202.45772, y: 15.261948, z: -20}
+  m_LocalPosition: {x: -202.45662, y: 15.261948, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4337,7 +4337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -202.45772, y: 15.261948, z: -20}
+  m_LocalPosition: {x: -202.45662, y: 15.261948, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6589,7 +6589,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: MainMenu
-  GameMenu: GameScene
+  LevelLearn: LevelLearn
+  Level1: Level1
+  Level2: Level2
+  Level3: Level3
+  gameEnded: GameEnd
 --- !u!4 &1135652371
 Transform:
   m_ObjectHideFlags: 0
@@ -7193,7 +7197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1225808554
 RectTransform:
   m_ObjectHideFlags: 0

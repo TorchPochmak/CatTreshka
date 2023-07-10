@@ -1,3 +1,4 @@
+using CatTreshka;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,10 @@ public class CoinCollector : MonoBehaviour
     [SerializeField] private AudioSource CoinCollected;
     [SerializeField] private TextMeshProUGUI text;
     private int Coins;
+    private void Start()
+    {
+        Coins = GameData.CoinsCount;
+    }
 
     private void Update()
     {
@@ -19,6 +24,10 @@ public class CoinCollector : MonoBehaviour
         if (CoinCollected.isPlaying) CoinCollected.Stop();
         CoinCollected.Play();
         Coins += coins;
+    }
+    public int GetCoins()
+    {
+        return Coins;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

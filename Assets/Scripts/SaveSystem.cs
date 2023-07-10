@@ -25,10 +25,12 @@ namespace CatTreshka
         public void SaveCoins(int coins)
         {
             PlayerPrefs.SetInt("Coins", coins);
+            GameData.CoinsCount = coins;
         }
         public void SaveLevel(int level)
         {
             PlayerPrefs.SetInt("Level", level);
+            GameData.CurrentLevel = level;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace CatTreshka
 {
-    public class ButtonFade : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class ButtonFade : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private Image thisButton;
         [SerializeField] private Color Entercolor;
@@ -15,7 +15,6 @@ namespace CatTreshka
 
         private void Start()
         {
-            thisButton = this.GetComponent<Image>();
             thisButton.color = Disablecolor;
         }
         public void OnPointerEnter(PointerEventData eventData)
@@ -27,9 +26,14 @@ namespace CatTreshka
         {
             thisButton.color = Disablecolor;
         }
-        public void Click()
+        public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.LogError("Clicked");
+            thisButton.color = Entercolor;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            thisButton.color = Disablecolor;
         }
     }
 }

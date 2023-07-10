@@ -3,29 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace CatTreshka
 {
-    [SerializeField] string Menu = "MainMenu";
-    [SerializeField] string GameMenu = "GameScene";
-    public void OnGameStart()
+    //Все упоминания названия сцен с комменатрием SCENE_NAME
+    public class GameManager : MonoBehaviour
     {
-        // тут должна быть сохрянение - загрузка
-        SceneManager.LoadScene(GameMenu);
-    }
+        [SerializeField] string Menu = "MainMenu";
+        [SerializeField] string LevelLearn = "LevelLearn";
+        [SerializeField] string Level1 = "Level1";
+        [SerializeField] string Level2 = "Level2";
+        [SerializeField] string Level3 = "Level3";
 
-    public void OnGameExit()
-    {
-        // можно сделать типо хотите выйти ..
-        Application.Quit();
-    }
-    public void ToMenu()
-    {
-        // тут должна быть сохрянение - загрузка
-        //TODO сохранение???
-        SceneManager.LoadScene(Menu);
-    }
-    public void LoadLevelByName(string name)
-    {
-        SceneManager.LoadScene(name);
+        //MainMenu_Play
+        public void OnGameStart()
+        {
+            switch (GameData.CurrentLevel)
+            {
+                default:
+                case 1:
+                    {
+                        // SCENE_NAME
+                        LoadLevelByName(LevelLearn);
+                        break;
+                    }
+                case 2:
+                    {
+                        // SCENE_NAME
+                        LoadLevelByName(Level2);
+                        break;
+                    }
+                case 3:
+                    {
+                        // SCENE_NAME
+                        LoadLevelByName(Level3);
+                        break;
+                    }
+            }
+        }
+
+        //MainMenu_Exit
+        public void OnGameExit()
+        {
+            // можно сделать типо хотите выйти ..
+            Application.Quit();
+        }
+
+        //Game_ToMainMenu
+        public void ToMenu()
+        {
+            SceneManager.LoadScene(Menu);
+        }
+        public void LoadLevelByName(string name)
+        {
+            SceneManager.LoadScene(name);
+        }
     }
 }

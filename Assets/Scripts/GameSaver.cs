@@ -1,11 +1,11 @@
-//ве щрн гдеяэ гюашкн юкн
+using CatTreshka;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace CatTreshka
 {
-    public class SaveSystem : MonoBehaviour
+    public class GameSaver : MonoBehaviour
     {
         private void Awake()
         {

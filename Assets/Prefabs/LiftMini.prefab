@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524344856241157314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -0.37, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,11 +130,14 @@ GameObject:
   - component: {fileID: 3064368625397385253}
   - component: {fileID: 5534330726000369573}
   - component: {fileID: 4380575614988312844}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - component: {fileID: 471852114206188396}
 =======
   - component: {fileID: 4919610515916857213}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of a6e755e (fixing bugs)
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -257,6 +260,7 @@ BoxCollider2D:
 <<<<<<< Updated upstream
   m_Size: {x: 40.773247, y: 3.1875734}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!50 &471852114206188396
 Rigidbody2D:
   serializedVersion: 4
@@ -299,6 +303,8 @@ PlatformEffector2D:
   m_UseSideBounce: 0
   m_SideArc: 1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of a6e755e (fixing bugs)
 --- !u!1 &5196307456096956895
 GameObject:
   m_ObjectHideFlags: 0

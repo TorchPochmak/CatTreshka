@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 6711329520528634017}
   - component: {fileID: 5403438058383782096}
   - component: {fileID: 6592469006191027307}
+  - component: {fileID: 8793489285761787925}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -246,6 +247,26 @@ MonoBehaviour:
   rightBorder: {fileID: 3975056357026280631}
   movementSpeed: 7.5
   direction: 1
+--- !u!95 &8793489285761787925
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672539816982016010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2a62a36c0bb4b944a8b75a64e3edf5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8652586164057193185
 GameObject:
   m_ObjectHideFlags: 0

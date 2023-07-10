@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -256,11 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      angry_mod_0: 1428522513
-      angry_mod_1: 306588448
-      angry_mod_2: -78159727
       angry_mod_3: 1105130701
       angry_mod_4: -2070499418
+      angry_mod_1: 306588448
+      angry_mod_0: 1428522513
+      angry_mod_2: -78159727
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,46 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PuzzleRotate : MonoBehaviour
+namespace CatTreshka
 {
-    public float currentDegrees = 0f;
-    public bool isPlaced;
 
-    public float[] correctRotation;
-    private float[] rotate = { 0, 90, 180, 270 };
-    private PuzzleManager puzzleManager;
-
-    private void Awake()
+    public class PuzzleRotate : MonoBehaviour, IPointerUpHandler
     {
-        puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
-    }
+        public float currentDegrees = 0f;
+        public bool isPlaced;
 
-    private void Start()
-    {
-        int Rand = Random.Range(0, rotate.Length); // Puzzle mustn't be solved after Start
+        public float[] correctRotation;
+        private float[] rotate = { 0, 90, 180, 270 };
+        private PuzzleManager puzzleManager;
 
-        transform.eulerAngles = new Vector3(0, 0, rotate[Rand]);
-        currentDegrees = rotate[Rand];
-        isPlaced = CheckTile();
-
-    }
-    private void OnMouseDown()
-    {
-        transform.Rotate(0, 0, 90);
-        currentDegrees = ((currentDegrees + 90) % 360);
-        isPlaced = CheckTile();
-        puzzleManager.CheckPuzzle();
-    }
-    private bool CheckTile()
-    {
-        for (int i = 0; i < correctRotation.Length; i++)
+        private void Awake()
         {
-            if (currentDegrees == correctRotation[i])
-            {
-                return true;
-            }
+            puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
         }
-        return false;
+
+        private void Start()
+        {
+            int Rand = Random.Range(0, rotate.Length); // Puzzle mustn't be solved after Start
+
+            transform.eulerAngles = new Vector3(0, 0, rotate[Rand]);
+            currentDegrees = rotate[Rand];
+            isPlaced = CheckTile();
+
+        }
+        private bool CheckTile()
+        {
+            for (int i = 0; i < correctRotation.Length; i++)
+            {
+                if (currentDegrees == correctRotation[i])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            transform.Rotate(0, 0, 90);
+            currentDegrees = ((currentDegrees + 90) % 360);
+            isPlaced = CheckTile();
+            puzzleManager.CheckPuzzle();
+        }
     }
 }

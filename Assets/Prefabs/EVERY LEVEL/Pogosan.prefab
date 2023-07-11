@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bf646aaaf86ee4c9d895864dacf679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfLeveltoSave: 2
+  numberOfLeveltoSave: 1
+  needsArtek: 0

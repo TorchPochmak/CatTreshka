@@ -10,6 +10,10 @@ public class HPController : MonoBehaviour
 {
     [SerializeField] private Respawn respawn;
 
+    private bool CanBeHurt = true;
+
+
+
 
     public bool isDead = false;
     [SerializeField] private SpriteRenderer sprite;
@@ -55,6 +59,12 @@ public class HPController : MonoBehaviour
                 yield return new WaitForSeconds(tick);
             }
     }
+    private IEnumerator Hurting()
+    {
+        CanBeHurt = false;
+        yield return new WaitForSeconds(2f);
+        CanBeHurt = true;
+    }
     public int GetHp()
     {
         return hp;
@@ -62,10 +72,12 @@ public class HPController : MonoBehaviour
     public void SetHP(int _hp)
     {
         if (isDead) return;
-        StopAllCoroutines();
         if (_hp < hp)
         {
+            //hurt
+            if (!CanBeHurt) return;
             StartCoroutine(changeColor(hurtColor));
+            StartCoroutine(Hurting());
         }
         else if (_hp > hp)
         {
@@ -93,7 +105,9 @@ public class HPController : MonoBehaviour
     private void Start()
     {
         sprite = this.GetComponent<SpriteRenderer>();
+        isDead = false;
         SetHP(beginHP);
+
     }
     public IEnumerator Die()
     {
@@ -112,16 +126,7 @@ public class HPController : MonoBehaviour
     {
         yield return StartCoroutine(respawn.RespawnFirst());
         Debug.Log("ppppppppopopoppepepeop");
-        SetHP(3);
-        //TODO lose artek
-        isDead = false;
-        float tick = dieTime / ticksToDie;
-        int Atick = 255 / (int)ticksToDie;
-        for (int i = 0; i <= 255; i += Atick)
-        {
-            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, (float)i / 255);
-            yield return new WaitForSecondsRealtime(tick);
-        }
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
+        
+        
     }
 }

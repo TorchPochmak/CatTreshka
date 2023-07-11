@@ -7,6 +7,7 @@ namespace CatTreshka
 {
     public class Pogosan : MonoBehaviour
     {
-        public int numberOfLeveltoSave; // 1,2,3,100
+        public int numberOfLeveltoSave; // 0,1,2,3,100
+        public bool needsArtek = true;
     }
 }

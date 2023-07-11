@@ -8,7 +8,7 @@ namespace CatTreshka
     {
         public int numberOfMinigame = 0;//1,2,3
         public bool canTake = true;
-        public bool hasArtek;
+        public bool hasArtek = false;
         [SerializeField] private GameObject ArtekBody;
 
         private void Awake()
@@ -18,7 +18,8 @@ namespace CatTreshka
         public void CollectArtek()
         {
             hasArtek = true;
-            ArtekBody.GetComponentInParent<Animator>().SetBool("Collected", true);
+            if(ArtekBody != null)
+                ArtekBody.GetComponentInParent<Animator>().SetBool("Collected", true);
         }
         public void OnTriggerEnter2D(Collider2D collision)
         {

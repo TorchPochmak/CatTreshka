@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: MainMenu
-  LevelLearn: GameScene
+  LevelLearn: LevelLearn
   Level1: Level1
   Level2: Level2
   Level3: Level3

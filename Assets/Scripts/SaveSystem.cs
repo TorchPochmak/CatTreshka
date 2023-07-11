@@ -9,6 +9,10 @@ namespace CatTreshka
     {
         private void Awake()
         {
+            LoadData();
+        }
+        public void LoadData()
+        {
             if (PlayerPrefs.HasKey("Coins"))
                 GameData.CoinsCount = PlayerPrefs.GetInt("Coins");
             else
@@ -19,18 +23,19 @@ namespace CatTreshka
                 GameData.CurrentLevel = PlayerPrefs.GetInt("Level");
             }
             else
-                GameData.CurrentLevel = 1;
+                GameData.CurrentLevel = 0;
         }
-
         public void SaveCoins(int coins)
         {
             PlayerPrefs.SetInt("Coins", coins);
             GameData.CoinsCount = coins;
+            PlayerPrefs.Save();
         }
         public void SaveLevel(int level)
         {
             PlayerPrefs.SetInt("Level", level);
             GameData.CurrentLevel = level;
+            PlayerPrefs.Save();
         }
     }
 }

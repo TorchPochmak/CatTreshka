@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CatTreshka {
     public class Respawn : MonoBehaviour
@@ -21,8 +22,7 @@ namespace CatTreshka {
             Singletons.BlackScreen.gameObject.SetActive(true);
             yield return StartCoroutine(Singletons.BlackScreen.Black_On());
             Debug.Log("Better");
-            Singletons.CatPlayer.transform.position = FirstSpawner.position;
-            yield return StartCoroutine(Singletons.BlackScreen.Black_Off());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

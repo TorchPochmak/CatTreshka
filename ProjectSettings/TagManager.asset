@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Pogosan
   - Artek
+  - Token(Clone)
+  - Enemy
   layers:
   - Default
   - TransparentFX

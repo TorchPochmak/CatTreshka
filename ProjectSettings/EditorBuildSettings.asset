@@ -6,26 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/ReleaseScenes/MainMenu.unity
     guid: b50b89173f5697e4cb7b38ba8fe47c25
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: c29b64e2fe33c504095fe90b2113c5bf
+    path: Assets/Scenes/ReleaseScenes/LevelLearn.unity
+    guid: 2664608dadeecd341a3b7c1a601ea194
   - enabled: 1
-    path: Assets/Scenes/mini-game scenes/FindTheCat.unity
-    guid: b9e293828ac211a43845f9c8e031686b
+    path: Assets/Scenes/ReleaseScenes/Level2.unity
+    guid: 96202fc3ea2ce1f4789c1bd2f816064a
   - enabled: 1
-    path: Assets/Scenes/mini-game scenes/MathGame.unity
-    guid: fa7a8664b831ced458655cfca85be2f6
-  - enabled: 1
-    path: Assets/Scenes/mini-game scenes/Puzzle.unity
-    guid: 16d939888c338a14f98f16590c2f2258
-  - enabled: 1
-    path: Assets/Scenes/mini-game scenes/PuzzleBeautiful.unity
-    guid: 3e65d12680f7cf44dab30ac9165769aa
-  - enabled: 1
-    path: Assets/Scenes/DemoMenu.unity
-    guid: 5e2b0bf9a47240e4496facb061e731ed
+    path: Assets/Scenes/ReleaseScenes/Level3.unity
+    guid: 30e4d8179826c004a96265c6d14cba2a
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f471b793116e9af4d85d6393da3cc98e, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 6aa829421295b654691e4c13299f9897, type: 2}

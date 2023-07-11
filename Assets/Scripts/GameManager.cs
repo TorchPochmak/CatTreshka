@@ -21,10 +21,15 @@ namespace CatTreshka
             switch (GameData.CurrentLevel)
             {
                 
-                case 1:
+                case 0:
                     {
                         // SCENE_NAME
                         LoadLevelByName(LevelLearn);
+                        break;
+                    }
+                case 1:
+                    {
+                        LoadLevelByName(Level1);
                         break;
                     }
                 case 2:

@@ -331,14 +331,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_1017 rotate_3: 862738280
       IMG_1017 rotate_0: 736992742
-      IMG_1017 rotate_2: 932062899
-      IMG_1017 rotate_7: -141204418
-      IMG_1017 rotate_6: -1848983869
       IMG_1017 rotate_1: -1479680588
-      IMG_1017 rotate_5: 1916536098
+      IMG_1017 rotate_2: 932062899
+      IMG_1017 rotate_3: 862738280
       IMG_1017 rotate_4: -1488398979
+      IMG_1017 rotate_5: 1916536098
+      IMG_1017 rotate_6: -1848983869
+      IMG_1017 rotate_7: -141204418
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

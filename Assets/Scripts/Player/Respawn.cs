@@ -7,9 +7,13 @@ namespace CatTreshka {
     {
         public Transform FirstSpawner;
 
+        private void Start()
+        {
+            SpawnDefault();
+        }
         public void SpawnDefault()
         {
-            Singletons.CatPlayer.transform.position = FirstSpawner.position;
+            Singletons.CatPlayer.transform.position = Singletons.CurrentRespawnPoint.position;
         }
         public IEnumerator RespawnFirst()
         {

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Puzzle
+  - Coin
+  - Pogosan
+  - Artek
   layers:
   - Default
   - TransparentFX
@@ -59,4 +62,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1131467199
+    locked: 0
+  - name: UIBRO
+    uniqueID: 3452202617
     locked: 0

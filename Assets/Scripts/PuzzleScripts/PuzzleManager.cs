@@ -9,29 +9,20 @@ namespace CatTreshka
 {
     public class PuzzleManager : MonoBehaviour
     {
+        public bool YOUWIN = false;
         [SerializeField] private PuzzleRotate[] puzzles;
+        [SerializeField] private Sprite lampOff;
+        [SerializeField] private Sprite lampOn;
+        [SerializeField] private GameObject Zaslon;
 
         public int allTiles = 6;
         public int solvedTiles = 6;
         public GameObject lamp;
 
-        private void Start()
-        {
-            puzzles = FindObjectsOfType<PuzzleRotate>();
-        }
         public void GenerateField()
         {
             // paste your code here
         }
-
-        public Vector3 SetZ(Vector3 vector, float z)
-        {
-            vector.z = z;
-            return vector;
-        }
-
-
-
         public void CheckPuzzle()
         {
             solvedTiles = 0;
@@ -46,8 +37,9 @@ namespace CatTreshka
             if (solvedTiles == allTiles)
             {
                 // send action to other scripts
-                lamp.transform.position = SetZ(lamp.transform.position, -2);
-                Debug.Log("solved");
+                lamp.GetComponent<Image>().sprite = lampOn;
+                Zaslon.SetActive(true);
+                YOUWIN = true;
             }
 
         }

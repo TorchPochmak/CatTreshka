@@ -10,22 +10,25 @@ public class LightMertsanie : MonoBehaviour
     [SerializeField] float LightOnDelay;
     [SerializeField] float LightOffDelay;
 
+    private float intense;
+
     // Update is called once per frame
     void Start()
     {
+        intense = Light.intensity;
         StartCoroutine(MertsanieCoroutine());
     }
 
     IEnumerator MertsanieCoroutine()
     {
-        yield return new WaitForSeconds(StartDelay);
+        yield return new WaitForSecondsRealtime(StartDelay);
 
         while (true)
         {
-            yield return new WaitForSeconds(LightOnDelay);
+            yield return new WaitForSecondsRealtime(LightOnDelay);
             Light.intensity = 0;
-            yield return new WaitForSeconds(LightOffDelay);
-            Light.intensity = 1;
+            yield return new WaitForSecondsRealtime(LightOffDelay);
+            Light.intensity = intense;
         }
     }
 }

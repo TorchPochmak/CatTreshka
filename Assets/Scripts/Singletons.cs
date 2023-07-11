@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace CatTreshka
 {
     public static class Singletons
     {
+        public static MG_Manager mg_manager;
         public static GameObject CatPlayer;
         public static FadeAndBackScreen BlackScreen;
         public static Transform CurrentRespawnPoint;

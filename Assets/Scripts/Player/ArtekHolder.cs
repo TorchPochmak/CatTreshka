@@ -6,6 +6,7 @@ namespace CatTreshka
 {
     public class ArtekHolder : MonoBehaviour
     {
+        public int numberOfMinigame = 0;//1,2,3
         public bool canTake = true;
         public bool hasArtek;
         [SerializeField] private GameObject ArtekBody;
@@ -26,7 +27,31 @@ namespace CatTreshka
                 if (collision.gameObject.tag == "Artek")
                 {
                     Time.timeScale = 0;
-                    Singletons.mg_manager.Minigame2.SetActive(true);
+                    switch (numberOfMinigame) {
+                        case 1:
+                            {
+                                Singletons.mg_manager.Minigame1.SetActive(true);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Singletons.mg_manager.Minigame2.SetActive(true);
+                                break;
+                            }
+                        case 3:
+                            {
+                                Singletons.mg_manager.Minigame3.SetActive(true);
+                                break;
+                            }
+                        default:
+                            {
+                                Debug.LogError("Не привязана Мини-игра");
+                                break;
+                            }
+
+                    }
+
+                    
                 }
             }
         }

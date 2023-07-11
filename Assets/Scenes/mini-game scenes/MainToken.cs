@@ -1,40 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class MainToken : MonoBehaviour
+namespace CatTreshka
 {
-    GameObject gameControl;
-    SpriteRenderer spriteRenderer;
-    public Sprite[] faces;
-    public Sprite back;
-    public int faceIndex;
-    public bool matched = false;
-
-    public void OnMouseDown()
+    public class MainToken : MonoBehaviour, IPointerClickHandler
     {
-        if (matched == false)
+        [SerializeField] private GameControl gameControl;
+        Image img;
+        public Sprite[] faces;
+        public Sprite back;
+        public int faceIndex;
+
+        public bool matched = false;
+
+        private void Awake()
         {
-            if (spriteRenderer.sprite == back)
+            gameControl = GameObject.Find("MINIGAME_3").GetComponent<GameControl>();
+            img = GetComponent<Image>();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (matched == false)
             {
-                if (gameControl.GetComponent<GameControl>().TwoCardsUp() == false)
+                if (img.sprite == back)
                 {
-                    spriteRenderer.sprite = faces[faceIndex];
-                    gameControl.GetComponent<GameControl>().AddVisibleFace(faceIndex);
-                    matched = gameControl.GetComponent<GameControl>().CheckMatch();
+                    if (gameControl.TwoCardsUp() == false)
+                    {
+                        img.sprite = faces[faceIndex];
+                        gameControl.AddVisibleFace(faceIndex);
+                        gameControl.CheckMatch();
+                    }
+                }
+                else
+                {
+                    img.sprite = back;
+                    gameControl.RemoveVisibleFace(faceIndex);
                 }
             }
-            else
-            {
-                spriteRenderer.sprite = back;
-                gameControl.GetComponent<GameControl>().RemoveVisibleFace(faceIndex);
-            }
         }
-    }
-
-    private void Awake()
-    {
-        gameControl = GameObject.Find("GameControl");
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 }

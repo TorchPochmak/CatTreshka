@@ -2,37 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatManager : MonoBehaviour
+namespace CatTreshka
 {
-    public SpriteRenderer circle;
-    public Color color;
-
-    [SerializeField] private CatController[] cats;
-    private int allCats ;
-    private int solved;
-    
-    private void Start()
+    public class CatManager : MonoBehaviour
     {
-        cats = FindObjectsOfType<CatController>();
-    }
+        public bool YOUWIN = false;
+        public Animator circle;
+        public Color color;
 
-    public void CheckCats()
-    {
-        solved = 0;
-        allCats = cats.Length;
-        for (int i = 0; i < cats.Length; ++i)
+        [SerializeField] private CatController[] cats;
+        private int allCats;
+        public int solved;
+
+        private void Start()
         {
-            if (cats[i].isPlaced)
-            {
-                solved++;
-                //Debug.Log("Another one");
-            }
+            cats = FindObjectsOfType<CatController>();
         }
-        Debug.Log(solved);
-        if (solved == allCats)
+        public void OnEnable()
         {
-            Debug.Log("You win");
-            circle.color = color;
+            CheckCats();
+        }
+        public void CheckCats()
+        {
+            solved = 0;
+            allCats = cats.Length;
+            for (int i = 0; i < cats.Length; ++i)
+            {
+                if (cats[i].isPlaced)
+                {
+                    solved++;
+                }
+            }
+            if (solved == allCats)
+            {
+                circle.Play("CircleWin");
+                YOUWIN = true;
+            }
         }
     }
 }

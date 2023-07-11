@@ -1,32 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class CatController : MonoBehaviour
+namespace CatTreshka
 {
-    public GameObject obj;
-    public int maxCount = 1;
-    public int catCount = 0;
-    public bool isPlaced = false;
-
-    private CatManager catManager;
-
-    private void Awake()
+    public class CatController : MonoBehaviour, IPointerClickHandler
     {
-        catManager = GameObject.Find("CatManager").GetComponent<CatManager>();
-    }
+        public GameObject obj;
+        public bool isPlaced = false;
 
-    public Vector3 SetZ(Vector3 vector, float z)
-    {
-        vector.z = z;
-        return vector;
-    }
+        private CatManager catManager;
 
-    private void OnMouseDown()
-    {
-        isPlaced = true;    
-        catCount++;
-        obj.transform.position = SetZ(obj.transform.position, 2);
-        catManager.CheckCats();
+        private void Awake()
+        {
+            catManager = GameObject.Find("CatManager").GetComponent<CatManager>();
+        }
+        public void OnEnable()
+        {
+
+        }
+        public Vector3 SetZ(Vector3 vector, float z)
+        {
+            vector.z = z;
+            return vector;
+        }
+        public void OnDisable()
+        {
+            isPlaced = false;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (!isPlaced)
+            {
+                isPlaced = true;
+                this.GetComponent<Animator>().Play("Fade");
+                catManager.CheckCats();
+            }
+        }
     }
 }

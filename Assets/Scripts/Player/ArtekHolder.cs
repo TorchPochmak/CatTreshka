@@ -26,7 +26,7 @@ namespace CatTreshka
                 if (collision.gameObject.tag == "Artek")
                 {
                     Time.timeScale = 0;
-                    Singletons.mg_manager.Minigame1.SetActive(true);
+                    Singletons.mg_manager.Minigame2.SetActive(true);
                 }
             }
         }

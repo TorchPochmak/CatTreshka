@@ -2621,7 +2621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414720251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -337.35666, y: -47.578053, z: -20}
+  m_LocalPosition: {x: -337.36008, y: -47.578053, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2701,7 +2701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440903240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -337.35666, y: -47.578053, z: -20}
+  m_LocalPosition: {x: -337.36008, y: -47.578053, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14936,7 +14936,7 @@ PrefabInstance:
     - target: {fileID: 3595691200303449729, guid: 35e15e26e8388ee4b920e62e14d416cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1607909410}
+      objectReference: {fileID: 775790555}
     - target: {fileID: 3595691200303449729, guid: 35e15e26e8388ee4b920e62e14d416cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2

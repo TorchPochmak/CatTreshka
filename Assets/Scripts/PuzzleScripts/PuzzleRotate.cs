@@ -8,6 +8,8 @@ namespace CatTreshka
 
     public class PuzzleRotate : MonoBehaviour, IPointerClickHandler
     {
+        [SerializeField] private AudioSource audio;
+
         [SerializeField] private RectTransform pieceToRotate;
 
         public float currentDegrees = 0f;
@@ -58,6 +60,7 @@ namespace CatTreshka
         }
         public IEnumerator Rotate()
         {
+            audio.Play();
             float weight = 0;
             IsRotating = true;
             float lastz = pieceToRotate.eulerAngles.z;

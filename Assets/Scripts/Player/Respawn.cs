@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 namespace CatTreshka {
     public class Respawn : MonoBehaviour
     {
+        [SerializeField] private AudioSource source;
         public Transform FirstSpawner;
 
         private void Start()
         {
+            source.Play();
             SpawnDefault();
         }
         public void SpawnDefault()
         {
+
             Singletons.CatPlayer.transform.position = Singletons.CurrentRespawnPoint.position;
         }
         public IEnumerator RespawnFirst()

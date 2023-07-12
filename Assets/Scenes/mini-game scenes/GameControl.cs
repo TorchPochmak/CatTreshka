@@ -7,6 +7,10 @@ namespace CatTreshka
 {
     public class GameControl : MonoBehaviour
     {
+        bool donedone = false;
+
+
+        [SerializeField] private AudioSource done;
 
         [SerializeField] private GameObject TokenParent;
         [SerializeField] private GameObject token;
@@ -95,8 +99,18 @@ namespace CatTreshka
                 yield return null;
             }
             img.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
-        }
-        public bool CheckEndOfGame()
+            bool OK = true;
+            for (int i = 0; i < TokenParent.transform.childCount; i++)
+            {
+                if (TokenParent.transform.GetChild(i).gameObject.GetComponent<MainToken>().matched == false) OK = false;
+            }
+            if (OK  && !donedone)
+            {
+                donedone = true;
+                done.Play();
+            }
+            }
+            public bool CheckEndOfGame()
         {
             for (int i = 0; i < TokenParent.transform.childCount; i++)
             {

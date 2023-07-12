@@ -16,6 +16,7 @@ public class HurtObject : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("oof");
             playerHP.SetHP(playerHP.GetHp() - 1);
         }
     }

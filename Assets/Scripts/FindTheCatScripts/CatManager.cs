@@ -6,6 +6,8 @@ namespace CatTreshka
 {
     public class CatManager : MonoBehaviour
     {
+        [SerializeField] private AudioSource source;
+
         public bool YOUWIN = false;
         public Animator circle;
         public Color color;
@@ -36,6 +38,7 @@ namespace CatTreshka
             if (solved == allCats)
             {
                 circle.Play("CircleWin");
+                source.Play();
                 YOUWIN = true;
             }
         }

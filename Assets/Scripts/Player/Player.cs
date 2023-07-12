@@ -7,7 +7,7 @@ namespace CatTreshka
     public class Player : MonoBehaviour
     {
 
-        public AudioSource MoveAudio;
+        [SerializeField] private AudioSource MoveAudio;
 
         [SerializeField] private SpriteRenderer sprite;
         public Transform RightGround;
@@ -35,7 +35,6 @@ namespace CatTreshka
         }
         void Start()
         {
-            MoveAudio = this.GetComponent<AudioSource>();
             position = GetComponent<Transform>();
             animator = GetComponent<Animator>();
             physicShape = GetComponent<Rigidbody2D>();

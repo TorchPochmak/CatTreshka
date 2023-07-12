@@ -18,8 +18,11 @@ namespace CatTreshka
         public void CollectArtek()
         {
             hasArtek = true;
-            if(ArtekBody != null)
+            if (ArtekBody != null)
+            {
                 ArtekBody.GetComponentInParent<Animator>().SetBool("Collected", true);
+                ArtekBody.GetComponentInParent<AudioSource>().Play();
+            }
         }
         public void OnTriggerEnter2D(Collider2D collision)
         {

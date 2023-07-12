@@ -10,6 +10,8 @@ namespace CatTreshka
     public class PuzzleManager : MonoBehaviour
     {
         public bool YOUWIN = false;
+        [SerializeField] private AudioSource done;
+
         [SerializeField] private PuzzleRotate[] puzzles;
         [SerializeField] private Sprite lampOff;
         [SerializeField] private Sprite lampOn;
@@ -39,6 +41,7 @@ namespace CatTreshka
                 // send action to other scripts
                 lamp.GetComponent<Image>().sprite = lampOn;
                 Zaslon.SetActive(true);
+                done.Play();
                 YOUWIN = true;
             }
 

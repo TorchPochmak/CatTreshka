@@ -7,6 +7,8 @@ namespace CatTreshka
 {
     public class CloseGame : MonoBehaviour, IPointerClickHandler
     {
+        [SerializeField] private AudioSource source;
+
         [SerializeField] private PuzzleManager manager;
         [SerializeField] private GameObject thisMinigame;
         [SerializeField] private ArtekHolder artekholder;
@@ -18,6 +20,7 @@ namespace CatTreshka
                 artekholder.CollectArtek();
             }
             artekholder.ReturnMG();
+            source.Play();
             thisMinigame.SetActive(false);
             Time.timeScale = 1;
         }

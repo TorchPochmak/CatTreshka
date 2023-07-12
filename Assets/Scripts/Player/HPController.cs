@@ -8,12 +8,11 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class HPController : MonoBehaviour
 {
+    [SerializeField] private AudioSource source;
+
     [SerializeField] private Respawn respawn;
 
     private bool CanBeHurt = true;
-
-
-
 
     public bool isDead = false;
     [SerializeField] private SpriteRenderer sprite;
@@ -76,6 +75,7 @@ public class HPController : MonoBehaviour
         {
             //hurt
             if (!CanBeHurt) return;
+            source.Play();
             StartCoroutine(changeColor(hurtColor));
             StartCoroutine(Hurting());
         }

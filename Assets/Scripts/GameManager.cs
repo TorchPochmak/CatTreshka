@@ -14,6 +14,7 @@ namespace CatTreshka
         [SerializeField] string Level2 = "Level2";
         [SerializeField] string Level3 = "Level3";
         [SerializeField] string gameEnded = "GameEnd";
+        [SerializeField] string DemoKat = "DemoMenu";
 
         //MainMenu_Play
         public void OnGameStart()
@@ -24,7 +25,7 @@ namespace CatTreshka
                 case 0:
                     {
                         // SCENE_NAME
-                        LoadLevelByName(LevelLearn);
+                        LoadLevelByName(DemoKat);
                         break;
                     }
                 case 1:

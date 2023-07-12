@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReleaseScenes/Level3.unity
     guid: 30e4d8179826c004a96265c6d14cba2a
+  - enabled: 1
+    path: Assets/Scenes/ReleaseScenes/Level1.unity
+    guid: 6ea4cca7f0266134493573d5ba7ac8f8
+  - enabled: 1
+    path: Assets/Scenes/ReleaseScenes/DemoMenu.unity
+    guid: 5e2b0bf9a47240e4496facb061e731ed
+  - enabled: 1
+    path: Assets/Scenes/ReleaseScenes/GameEnd.unity
+    guid: 59874fd9758a8af4e8c927787b7613d9
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f471b793116e9af4d85d6393da3cc98e, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 6aa829421295b654691e4c13299f9897, type: 2}

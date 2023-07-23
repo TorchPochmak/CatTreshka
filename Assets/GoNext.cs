@@ -18,9 +18,4 @@ public class GoNext : MonoBehaviour
         Debug.Log("WTF");
         manager.LoadLevelByName("LevelLearn");
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

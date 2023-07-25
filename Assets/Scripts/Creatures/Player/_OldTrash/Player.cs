@@ -57,19 +57,30 @@ namespace CatTreshka
             if (x != 0) _animator.SetBool("isRunning", true);
             else _animator.SetBool("isRunning", false);
 
-            if (_playerMovement.IsGrounded)
+            if (_playerMovement.IsGrounded && landed_allowed)
                 _animator.SetBool("isLanded", true);
             else
+            {
                 _animator.SetBool("isLanded", false);
+            }
         }
         public void Jump()//Подписаться на PlayerMovement;
         {
+            StartCoroutine(MiniDelay());
             _animator.SetTrigger("isJump");
         }
         public void Flip()
         {
             IsFliped = !IsFliped;
             _sprite.flipX = !_sprite.flipX;
+        }
+        bool landed_allowed = true;
+        private IEnumerator MiniDelay()
+        {
+            landed_allowed = false;
+            yield return new WaitForEndOfFrame();
+
+            landed_allowed = true;
         }
 
     }

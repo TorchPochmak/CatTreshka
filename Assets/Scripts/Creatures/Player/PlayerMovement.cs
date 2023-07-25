@@ -30,14 +30,12 @@ namespace CatTreshka {
         private void Update()
         {
             IsGrounded = Physics2D.OverlapArea(_rightCornerGroundCheck.position, _leftCornerGroundCheck.position, _whatIsGround);
-            if (IsJumpPressed && _isJumpAllowed)
+            if (IsJumpPressed)
             {
                 PlayerJumped.Invoke();
                 _jumpsLeft--;
                 Jump(JumpForce);
                 IsGrounded = false;
-                _isJumpAllowed = false;//на всякий случай
-                StartCoroutine(BetweenJumpsDelay());
             }
             if (IsGrounded)
             {
@@ -69,12 +67,6 @@ namespace CatTreshka {
 
             
             Debug.Log(_isJumpAllowed);
-        }
-        private IEnumerator BetweenJumpsDelay()
-        {
-            _isJumpAllowed = false;
-            yield return new WaitForSeconds(JumpDelay);
-            _isJumpAllowed = true;
         }
     }
 }

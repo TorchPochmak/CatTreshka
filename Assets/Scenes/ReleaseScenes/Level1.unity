@@ -3454,14 +3454,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460252050564943522, guid: a89dc6315eb4eb14589c2ee326829784, type: 3}
-      propertyPath: timeToChangeColor
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460252050564943522, guid: a89dc6315eb4eb14589c2ee326829784, type: 3}
-      propertyPath: ticksToChangeColor
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460252050564943522, guid: a89dc6315eb4eb14589c2ee326829784, type: 3}
       propertyPath: interafaceLinks.Array.data[0]
       value: 
       objectReference: {fileID: 1073399799}
@@ -8041,7 +8033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014110207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -381.61096, y: -13.652092, z: -20}
+  m_LocalPosition: {x: -381.6081, y: -13.652092, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16780,7 +16772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346906554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -381.61096, y: -13.652092, z: -20}
+  m_LocalPosition: {x: -381.6081, y: -13.652092, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

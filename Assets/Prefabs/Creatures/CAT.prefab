@@ -943,7 +943,7 @@ MonoBehaviour:
   hurtColor: {r: 1, g: 0.49411765, b: 0.49411765, a: 1}
   healColor: {r: 0.09803922, g: 1, b: 0, a: 1}
   ticksToChangeColor: 20
-  timeToChangeColor: 0.6
+  timeToChangeColor: 1
   dieTime: 1
   ticksToDie: 40
   beginHP: 3

@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class HPController : MonoBehaviour
 {
@@ -37,26 +36,39 @@ public class HPController : MonoBehaviour
 
     [SerializeField] private List<RawImage> interafaceLinks;
 
+
+    float r, g, b,tick,time;
+    Color c;
     private IEnumerator changeColor(Color targetColor)
     {
-            float r = Mathf.Abs(targetColor.r - sprite.color.r) / ticksToChangeColor * 2;
-            float g = Mathf.Abs(targetColor.g - sprite.color.g) / ticksToChangeColor * 2;
-            float b = Mathf.Abs(targetColor.b - sprite.color.b) / ticksToChangeColor * 2;
-            float tick = timeToChangeColor / ticksToChangeColor;
-            float time = 0f;
-            while (time < timeToChangeColor / 2)
-            {
-                time += tick;
-                sprite.color = new Color(sprite.color.r - r, sprite.color.g - g, sprite.color.b - b, sprite.color.a);
-                yield return new WaitForSeconds(tick);
-            }
-            time = timeToChangeColor / 2;
-            while (time > 0f)
-            {
-                time -= tick;
-                sprite.color = new Color(sprite.color.r + r, sprite.color.g + g, sprite.color.b + b, sprite.color.a);
-                yield return new WaitForSeconds(tick);
-            }
+        r = Mathf.Abs(targetColor.r - sprite.color.r) / ticksToChangeColor * 2;
+        g = Mathf.Abs(targetColor.g - sprite.color.g) / ticksToChangeColor * 2;
+        b = Mathf.Abs(targetColor.b - sprite.color.b) / ticksToChangeColor * 2;
+        tick = timeToChangeColor / ticksToChangeColor;
+        time = 0f;
+        c = sprite.color;
+        yield return new WaitForEndOfFrame();
+        WaitForSeconds tck = new WaitForSeconds(tick);
+        while (time < timeToChangeColor / 2)
+        {
+            time += tick;
+            c.r = sprite.color.r - r;
+            c.g = sprite.color.g - g;
+            c.b = sprite.color.b - b;
+            sprite.color = c;
+            yield return tck;
+        }
+        time = timeToChangeColor / 2;
+        c = sprite.color;
+        while (time > 0f)
+        {
+            time -= tick;
+            c.r = sprite.color.r + r;
+            c.g = sprite.color.g + g;
+            c.b = sprite.color.b + b;
+            sprite.color = c;
+            yield return tck;
+        }
     }
     private IEnumerator Hurting()
     {
@@ -89,18 +101,23 @@ public class HPController : MonoBehaviour
         }
         else if (_hp > 3) hp = 3;
         else hp = _hp;
-
+        StartCoroutine(ChangeInterface());
+        if(hp == 0) StartCoroutine(Die());
+    }
+    private IEnumerator ChangeInterface()
+    {
+        yield return new WaitForEndOfFrame();
         for (int i = 0; i < hp; i++)
         {
             interafaceLinks[i].texture = yesHP;
             interafaceLinks[i].color = yesColor;
         }
-        for(int i = hp; i < 3; i++)
+        yield return new WaitForEndOfFrame();
+        for (int i = hp; i < 3; i++)
         {
             interafaceLinks[i].color = noColor;
             interafaceLinks[i].texture = noHP;
         }
-        if(hp == 0) StartCoroutine(Die());
     }
     private void Start()
     {
@@ -114,12 +131,16 @@ public class HPController : MonoBehaviour
         isDead = true;
         float tick = dieTime / ticksToDie;
         int Atick = 255 / (int)ticksToDie;
+        Color c = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+        WaitForSecondsRealtime tck = new WaitForSecondsRealtime(tick);
         for (int i = 255; i >= 0; i -= Atick)
         {
-            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, (float)i / 255);
-            yield return new WaitForSecondsRealtime(tick);
+            c.a = (float)i / 255;
+            sprite.color = c;
+            yield return tck;
         }
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        c.a = 0;
+        sprite.color = c;
         yield return StartCoroutine(RespawnGo());
     }
     public IEnumerator RespawnGo()

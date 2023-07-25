@@ -29,18 +29,18 @@ namespace CatTreshka {
 
         private void Update()
         {
-            IsGrounded = Physics2D.OverlapArea(_rightCornerGroundCheck.position, _leftCornerGroundCheck.position, _whatIsGround);
+            GetInput();
+            
             if (IsJumpPressed)
             {
                 PlayerJumped.Invoke();
                 _jumpsLeft--;
                 Jump(JumpForce);
                 IsGrounded = false;
+                _isJumpAllowed = false;
+                StartCoroutine(JumpDel());
             }
-            if (IsGrounded)
-            {
-                _jumpsLeft = MaxJumps;
-            }
+            
         }
         private void GetInput()
         {
@@ -62,11 +62,22 @@ namespace CatTreshka {
 
         protected override void ComputeVelocity()//FixedUpdate
         {
-            GetInput();
+            if (_isJumpAllowed)
+            {
+                IsGrounded = Physics2D.OverlapArea(_rightCornerGroundCheck.position, _leftCornerGroundCheck.position, _whatIsGround);
+                if (IsGrounded)
+                {
+                    _jumpsLeft = MaxJumps;
+                }
+            }
             MoveX(ForwardForce, Speed, SmoothTime);
 
-            
-            Debug.Log(_isJumpAllowed);
+        }
+        private IEnumerator JumpDel()
+        {
+            _isJumpAllowed = false;
+            yield return new WaitForSecondsRealtime(JumpDelay);
+            _isJumpAllowed = true;
         }
     }
 }

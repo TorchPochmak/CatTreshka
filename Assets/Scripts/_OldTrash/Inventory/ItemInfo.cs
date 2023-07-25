@@ -70,7 +70,7 @@ namespace CatTreshka
         public void Drop()
         {
             Vector3 dropPos;
-            if (player.isFliped)
+            if (player.IsFliped)
             {
                 dropPos = new Vector3(player.transform.position.x + 6f, player.transform.position.y - 1f, player.transform.position.x);
             }

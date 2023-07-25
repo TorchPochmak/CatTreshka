@@ -54,12 +54,12 @@ namespace CatTreshka
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            col.gameObject.transform.SetParent(gameObject.transform, true);
+            Singletons.CatPlayer.transform.SetParent(gameObject.transform, true);
         }
 
         void OnCollisionExit2D(Collision2D col)
         {
-            col.gameObject.transform.parent = null;
+            Singletons.CatPlayer.transform.transform.parent = null;
         }
 
     }

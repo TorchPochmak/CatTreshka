@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1689805576721735542
+--- !u!1 &1230954090176483446
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4846940119414817505}
+  - component: {fileID: 907841174581516551}
   m_Layer: 0
   m_Name: LeftCorner
   m_TagString: Untagged
@@ -16,15 +16,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4846940119414817505
+--- !u!4 &907841174581516551
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689805576721735542}
+  m_GameObject: {fileID: 1230954090176483446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.432, y: -0.619, z: 0}
+  m_LocalPosition: {x: -0.664, y: -0.638, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -560,7 +560,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2379755354590638743}
-  - component: {fileID: 4446665499555049686}
   - component: {fileID: 987134079287922311}
   - component: {fileID: 6950964339870228113}
   - component: {fileID: 3003320259131900223}
@@ -579,41 +578,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7819490775628446970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.095, z: 0.05}
+  m_LocalPosition: {x: 0.243, y: -0.119, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7840240316483556652}
-  - {fileID: 4846940119414817505}
+  - {fileID: 907841174581516551}
   m_Father: {fileID: 7840240316094225510}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4446665499555049686
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7819490775628446970}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: bbd9f958b5e1d954a91710e8badc2231, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.33, y: -0.061216116}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.46, y: 1.56}
-    newSize: {x: 0.73, y: 0.78}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.66, y: 0.79756784}
-  m_EdgeRadius: 0
 --- !u!60 &987134079287922311
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -770,6 +743,7 @@ GameObject:
   - component: {fileID: 7840240316094225508}
   - component: {fileID: 7840240316094225505}
   - component: {fileID: 7840240316094225504}
+  - component: {fileID: 2201217303702335083}
   - component: {fileID: 7460252050564943522}
   - component: {fileID: 3028398816315839310}
   - component: {fileID: 4290353733427714804}
@@ -841,7 +815,7 @@ SpriteRenderer:
   m_SortingLayerID: 1131467199
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c374a4419f5bb94e8b1c8c2b957b2c7, type: 3}
+  m_Sprite: {fileID: -1043728417, guid: 021af80353218c24ba04acfffd478755, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -885,19 +859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce380755abca74f4b97764c47cf08ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveAudio: {fileID: 3028398816315839310}
-  sprite: {fileID: 0}
-  RightGround: {fileID: 7840240316483556652}
-  LeftGround: {fileID: 4846940119414817505}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  maxJumps: 2
-  jumpsLeft: 2
-  jumpPower: 22.5
-  movementSpeed: 12
-  isJumping: 0
-  isFliped: 0
+  _moveAudio: {fileID: 3028398816315839310}
+  IsJumping: 0
+  IsFliped: 0
 --- !u!50 &7840240316094225504
 Rigidbody2D:
   serializedVersion: 4
@@ -910,15 +874,54 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: bbd9f958b5e1d954a91710e8badc2231, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2201217303702335083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840240316094225509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfbe9262a9ae4d4fa8214c57ccc9f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothTime: 0.01
+  JumpForce: 20
+  MaxJumps: 2
+  Speed: 11
+  JumpDelay: 0.1
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  _leftCornerGroundCheck: {fileID: 907841174581516551}
+  _rightCornerGroundCheck: {fileID: 7840240316483556652}
+  PlayerJumped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7840240316094225505}
+        m_TargetAssemblyTypeName: CatTreshka.Player, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _jumpsLeft: 2
+  IsJumpPressed: 1
 --- !u!114 &7460252050564943522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7840240316483556653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -0.693, z: 0}
+  m_LocalPosition: {x: -0.041, y: -0.582, z: 0}
   m_LocalScale: {x: 0.75225, y: 0.3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,15 +1,18 @@
 using CatTreshka;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GoBack : MonoBehaviour
 {
     [SerializeField] private GameManager manager;
+    [SerializeField] private TextMeshPro text;
     public float time;
     // Start is called before the first frame update
     void Start()
     {
+        text.text = PlayerPrefs.GetInt("Coins").ToString();
         StartCoroutine(gogo());
     }
     private IEnumerator gogo()

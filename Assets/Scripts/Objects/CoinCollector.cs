@@ -35,7 +35,7 @@ public class CoinCollector : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             AddCoins(1);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 
